@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synaptiq"
+version = "1.0.0"
+description = "An event-driven, cognitive AI agent framework with graph memory, quantum sessions, and multi-agent orchestration"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Synaptiq Core Team"}
+]
+keywords = ["ai", "agent", "llm", "framework", "cognitive", "multi-agent"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "anthropic>=0.18.0",
+    "openai>=1.0.0",
+    "networkx>=3.0",
+    "chromadb>=0.4.0",
+    "sentence-transformers>=2.2.0",
+    "rich>=13.0.0",
+    "prompt-toolkit>=3.0.0",
+    "pydantic>=2.0.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "watchfiles>=0.20.0",
+    "semver>=3.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.scripts]
+synaptiq = "synaptiq.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["synaptiq*"]
